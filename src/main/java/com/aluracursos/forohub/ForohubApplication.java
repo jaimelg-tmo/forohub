@@ -8,9 +8,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ForohubApplication {
 
 	public static void main(String[] args) {
-		// Cargar .env y promover a System properties
-		Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
-		dotenv.entries().forEach(e -> System.setProperty(e.getKey(), e.getValue()));
+
+		Dotenv dotenv = Dotenv.configure()
+				.directory(System.getProperty("user.dir"))
+				.ignoreIfMalformed()
+				.ignoreIfMissing()
+				.load();
+
+		System.setProperty("spring.datasource.username", dotenv.get("DB_USER"));
+		System.setProperty("spring.datasource.password", dotenv.get("DB_PASSWORD"));
 
 		SpringApplication.run(ForohubApplication.class, args);
 	}

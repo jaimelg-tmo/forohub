@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS topico (
   autor VARCHAR(120) NOT NULL,
   curso VARCHAR(120) NOT NULL,
   PRIMARY KEY (id),
-  CONSTRAINT uk_topico_titulo_mensaje UNIQUE (titulo, mensaje)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT uk_topico_titulo_mensaje UNIQUE (titulo, mensaje(191))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
