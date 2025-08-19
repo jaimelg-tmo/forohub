@@ -3,6 +3,8 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+# Ignorar archivos de configuración local
+.env
 
 ### STS ###
 .apt_generated
