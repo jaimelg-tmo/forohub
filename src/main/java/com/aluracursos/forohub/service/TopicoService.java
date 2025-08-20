@@ -2,7 +2,7 @@ package com.aluracursos.forohub.service;
 
 import com.aluracursos.forohub.domain.topico.StatusTopico;
 import com.aluracursos.forohub.domain.topico.Topico;
-import com.aluracursos.forohub.domain.topico.TopicoRepository;
+import com.aluracursos.forohub.repository.TopicoRepository;
 import com.aluracursos.forohub.web.dto.TopicoRequest;
 import com.aluracursos.forohub.web.dto.TopicoResponse;
 import com.aluracursos.forohub.web.dto.TopicoUpdateRequest;
@@ -56,7 +56,6 @@ public class TopicoService {
         Topico topico = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Tópico no encontrado con id " + id));
 
-        // Si actualiza título+mensaje, validar duplicado
         String nuevoTitulo = req.titulo() != null ? req.titulo().trim() : topico.getTitulo();
         String nuevoMensaje = req.mensaje() != null ? req.mensaje().trim() : topico.getMensaje();
 
