@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final UsuarioRepository usuarioRepository; // <- inyectado aquí
+    private final UsuarioRepository usuarioRepository;
     private final TokenService tokenService;
 
     @Bean

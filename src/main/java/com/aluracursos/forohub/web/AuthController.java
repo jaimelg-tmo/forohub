@@ -28,23 +28,3 @@ public class AuthController {
         return tokenService.generarToken(authentication.getName());
     }
 }
-
-//@RequiredArgsConstructor
-//@RestController
-//@RequestMapping("/login")
-//public class AuthController {
-//
-//    private final AuthenticationManager authManager;
-//    private final TokenService tokenService;
-//
-//    @PostMapping
-//    public String login(@RequestBody LoginRequest loginRequest) {
-//        var auth = authManager.authenticate(
-//                new UsernamePasswordAuthenticationToken(
-//                        loginRequest.username(),
-//                        loginRequest.password()
-//                )
-//        );
-//        return tokenService.validateTokenAndGetUsername(auth.getName());
-//    }
-//}

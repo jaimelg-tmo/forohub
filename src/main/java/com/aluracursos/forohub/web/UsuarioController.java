@@ -25,7 +25,7 @@ public class UsuarioController {
 
         Usuario usuario = Usuario.builder()
                 .username(request.username())
-                .password(request.password()) // sin encriptado, como acordamos
+                .password(request.password())
                 .build();
 
         return usuarioRepository.save(usuario);
